@@ -266,6 +266,7 @@ span{color: var(--accent);}
 }
 
 .work-list .item {
+    position: relative;
     width: 370px;
     margin-right: 30px;
 }
@@ -289,7 +290,15 @@ span{color: var(--accent);}
             text-align: center;
         }
 
-.work-list .work{background-color: var(--primary-text-color);
+.work-list .work{
+           display: flex;
+           position: absolute;
+           justify-content: center;
+           bottom: 0;
+           align-items: center;
+           width: 370px;
+           height: 70px;
+           background-color: rgba(47, 48, 58, 0.8);;
            color: #ffffff;
            font-weight: bold;
            font-size: 14px;
