@@ -55,6 +55,7 @@ body {font-family: Roboto, sans-serif;
        font-size: 26px;
        line-height: 1.2;
        letter-spacing: 0.03em; 
+       text-decoration: none;
 }
 
 /*.container .logo {
@@ -98,11 +99,29 @@ span{color: var(--accent);}
     color: var(--title-text-color);
     padding-top: 32px;
     padding-bottom: 32px;
+    text-decoration: none;
 }
 
-.site-nav .link:hover, .site-nav .link:focus{color: #2196f3;}
+.site-nav .link:hover, .site-nav .link:focus{
+    color: #2196f3;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.site-nav .link.current{color: var(--accent) ;}
+.site-nav .link.current{
+    position: relative;
+    color: var(--accent) ;}
+
+.current::before{
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    right: 0;
+    border-radius: 2px;
+    background-color: var(--accent);
+}
 
 .auth-nav {
     display: flex;
@@ -137,14 +156,19 @@ span{color: var(--accent);}
     fill: #757575;
 }
 
+
+
 .auth-nav .item .item-smartfon:hover{
-    fill: var(--accent);
+    fill: var(--accent);    
 }
 
 .auth-nav .link:hover, .auth-nav .link:focus{
     color: #2196f3; 
     --color2:  #2196f3;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
 
 .hero{
     /*margin-bottom: 94px;*/
@@ -372,6 +396,7 @@ span{color: var(--accent);}
 
 .team-list .soc-seti li:hover {
     fill: white;
+    
 }
 
 .team-list .soc-seti img:hover {
@@ -444,7 +469,10 @@ span{color: var(--accent);}
     border: 1px solid #2196F3;;
     --color2: #2196F3;
     --color3: #2196F3;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
 
 .customers-list .item a{
     display: flex;
@@ -577,8 +605,8 @@ span{color: var(--accent);}
     border-radius: 50%;
     background-color: #f5f4fa;
     align-items: center;
-    justify-content: center;      
- }
+    justify-content: center;     
+}
 
  .soc-seti li {
      margin-right: 10px;
@@ -595,7 +623,8 @@ span{color: var(--accent);}
     border-radius: 50%;
     background-color: #2196f3;
     --color3: white;
- }
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
  .soc-seti .button .button-icon {
     width: 20px;
@@ -605,6 +634,7 @@ span{color: var(--accent);}
 
 .soc-seti .button .button-icon:hover {
     --color3: white;
+    
 }
 
 /*Соц. сети футера*/
@@ -639,6 +669,7 @@ span{color: var(--accent);}
 
 .socseti-footer .button-footer:hover{
     background-color: var(--accent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socseti-footer li {
@@ -747,9 +778,49 @@ span{color: var(--accent);}
 }
 
 
-.tehnokryaki .text{background-color: var(--accent);
-                   color: #ffffff;
-                   font-size: 18px;
-                   line-height: 1.5;
-                   letter-spacing: 0.03em;
+ .tehnokryaki .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    background-color: rgba(33, 150, 243, 0.9);
+    color: #ffffff;
+    position: absolute;
+    opacity: 1;
+    transition: 700ms opacity linear;
+    bottom: 0;
+    left: 0;
+    padding-top: 69px;
+    padding-bottom: 57px;
+    padding-left: 39px;
+    padding-right: 9px;
+    margin: 0;
 } 
+
+.images{
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+    transition-property: all;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
+}
+
+.images:hover .overlay{
+    transform: translateY(-325px);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
